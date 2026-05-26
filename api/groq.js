@@ -1,40 +1,23 @@
- export default async function handler(req, res) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
-  }
+import Groq from "groq-sdk";
 
-  try {
-    const { provider, ...body } = req.body;
+const groq = new Groq({
+  apiKey: process.env.GROQ_API_KEY,
+});
 
-    let response;
+export async function POST(req) {
+  const body = await req.json();
 
-    if (provider === 'groq') {
-      response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${process.env.GROQ_API_KEY}`
-        },
-        body: JSON.stringify({
-          model: 'openai/gpt-oss-120b',
-          ...body
-        })
-      });
-    } else {
-      response = await fetch(
-        'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=' + process.env.GEMINI_API_KEY,
-        {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(body)
-        }
-      );
-    }
+  const chatCompletion = await groq.chat.completions.create({
+    messages: [
+      {
+        role: "user",
+        content: body.message,
+      },
+    ],
+    model: "llama-3.3-70b-versatile",
+  });
 
-    const data = await response.json();
-    res.status(200).json(data);
-
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
- }
+  return Response.json({
+    reply: chatCompletion.choices[0]?.message?.content,
+  });
+}
