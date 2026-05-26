@@ -1,9 +1,11 @@
+html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Gemini AI</title>
+  <title>Thai AI</title>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -50,8 +52,8 @@
     @keyframes containerPulse { 0%,100%{box-shadow:0 0 0 0 rgba(var(--accent-rgb),0.0);} 50%{box-shadow:0 0 20px 2px rgba(var(--accent-rgb),0.35);} }
     @keyframes conicSpin { from{transform:rotate(0deg);} to{transform:rotate(360deg);} }
 
-    .gemini-logo-svg { position:relative; z-index:2; width:18px; height:18px; animation:logoSpin 6s cubic-bezier(0.65,0,0.35,1) infinite, logoBreathe 3s ease-in-out infinite; transform-origin:center; filter:drop-shadow(0 0 4px rgba(var(--accent-rgb),0.6)); }
-    .gemini-logo-svg path { fill:url(#geminiGradHeader); }
+    .logo-svg { position:relative; z-index:2; width:18px; height:18px; animation:logoSpin 6s cubic-bezier(0.65,0,0.35,1) infinite, logoBreathe 3s ease-in-out infinite; transform-origin:center; filter:drop-shadow(0 0 4px rgba(var(--accent-rgb),0.6)); }
+    .logo-svg path { fill:url(#logoGradHeader); }
     @keyframes logoSpin { 0%{transform:rotate(0deg);} 40%{transform:rotate(180deg);} 50%{transform:rotate(180deg);} 90%{transform:rotate(360deg);} 100%{transform:rotate(360deg);} }
     @keyframes logoBreathe { 0%,100%{filter:drop-shadow(0 0 3px rgba(var(--accent-rgb),0.5)) brightness(1);} 50%{filter:drop-shadow(0 0 10px rgba(var(--accent-rgb),0.9)) brightness(1.25);} }
 
@@ -63,8 +65,8 @@
     @keyframes welcomeGlow { 0%,100%{box-shadow:0 0 20px rgba(var(--accent-rgb),0.15),0 0 40px rgba(var(--accent-rgb),0.08);} 50%{box-shadow:0 0 30px rgba(var(--accent-rgb),0.4),0 0 60px rgba(var(--accent-rgb),0.2),0 0 80px rgba(var(--accent-rgb),0.1);} }
     @keyframes conicSpinLarge { from{transform:rotate(0deg);} to{transform:rotate(360deg);} }
 
-    .gemini-logo-svg-large { position:relative; z-index:2; width:44px; height:44px; animation:logoSpinLarge 8s cubic-bezier(0.65,0,0.35,1) infinite, logoBreatheLarge 3.5s ease-in-out infinite; transform-origin:center; }
-    .gemini-logo-svg-large path { fill:url(#geminiGradWelcome); }
+    .logo-svg-large { position:relative; z-index:2; width:44px; height:44px; animation:logoSpinLarge 8s cubic-bezier(0.65,0,0.35,1) infinite, logoBreatheLarge 3.5s ease-in-out infinite; transform-origin:center; }
+    .logo-svg-large path { fill:url(#logoGradWelcome); }
     @keyframes logoSpinLarge { 0%{transform:rotate(0deg) scale(1);} 45%{transform:rotate(180deg) scale(1.1);} 55%{transform:rotate(180deg) scale(1.1);} 100%{transform:rotate(360deg) scale(1);} }
     @keyframes logoBreatheLarge { 0%,100%{filter:drop-shadow(0 0 6px rgba(var(--accent-rgb),0.5)) brightness(1);} 50%{filter:drop-shadow(0 0 16px rgba(var(--accent-rgb),0.95)) drop-shadow(0 0 30px rgba(244,114,182,0.4)) brightness(1.3);} }
 
@@ -212,11 +214,11 @@
 
 <svg width="0" height="0" style="position:absolute;">
   <defs>
-    <linearGradient id="geminiGradHeader" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="logoGradHeader" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="var(--accent)"><animate attributeName="stop-color" values="#6366f1;#a78bfa;#ec4899;#6366f1" dur="6s" repeatCount="indefinite"/></stop>
       <stop offset="100%" stop-color="var(--accent2)"><animate attributeName="stop-color" values="#ec4899;#6366f1;#a78bfa;#ec4899" dur="6s" repeatCount="indefinite"/></stop>
     </linearGradient>
-    <linearGradient id="geminiGradWelcome" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="logoGradWelcome" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="var(--accent)"><animate attributeName="stop-color" values="#6366f1;#a78bfa;#ec4899;#f6c177;#6366f1" dur="8s" repeatCount="indefinite"/></stop>
       <stop offset="50%" stop-color="var(--accent2)"><animate attributeName="stop-color" values="#a78bfa;#ec4899;#6366f1;#a78bfa" dur="8s" repeatCount="indefinite"/></stop>
       <stop offset="100%" stop-color="var(--accent2)"><animate attributeName="stop-color" values="#ec4899;#6366f1;#a78bfa;#ec4899" dur="8s" repeatCount="indefinite"/></stop>
@@ -273,13 +275,13 @@
     <div class="header-inner">
       <div class="wordmark">
         <div class="wordmark-icon">
-          <svg class="gemini-logo-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <svg class="logo-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path d="M12 0 C12 6 13 11 24 12 C13 13 12 18 12 24 C12 18 11 13 0 12 C11 11 12 6 12 0 Z"/>
           </svg>
         </div>
         <div>
-          <div class="wordmark-main">Gemini AI</div>
-          <div class="wordmark-sub">Powered by Gemini</div>
+          <div class="wordmark-main">Thai AI</div>
+          <div class="wordmark-sub">Powered by Groq</div>
         </div>
       </div>
       <div class="header-right">
@@ -293,7 +295,7 @@
         </div>
         <div class="model-badge">
           <span class="model-dot"></span>
-          <span>gemini-2.5-flash</span>
+          <span>mixtral-8x7b</span>
         </div>
         <button class="settings-toggle" id="settingsToggle" title="Settings">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -312,12 +314,12 @@
           <span class="sparkle-particle p2"></span>
           <span class="sparkle-particle p3"></span>
           <span class="sparkle-particle p4"></span>
-          <svg class="gemini-logo-svg-large" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <svg class="logo-svg-large" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path d="M12 0 C12 6 13 11 24 12 C13 13 12 18 12 24 C12 18 11 13 0 12 C11 11 12 6 12 0 Z"/>
           </svg>
         </div>
         <h2>What Can I Help With?</h2>
-        <p>Made by TM — ask anything, paste images too.</p>
+        <p>Ask anything, Thai AI will help you out! Paste images too.</p>
         <div class="suggestion-chips">
           <div class="chip" onclick="useChip(this)">Explain quantum computing</div>
           <div class="chip" onclick="useChip(this)">Write me a poem</div>
@@ -355,7 +357,7 @@
 <input type="file" id="file-input" accept="image/*" multiple />
 
 <script>
-  const DEFAULT_PROMPT = "You are an AI to help students do their work, answer questions, and to be smart. Take your time when the question is complex. Answer all their questions.";
+  const DEFAULT_PROMPT = "You are a helpful AI assistant. Answer questions thoughtfully and provide clear, concise responses.";
   let SYSTEM_PROMPT = DEFAULT_PROMPT;
   let history = [], isLoading = false, attachedImages = [];
 
@@ -430,7 +432,7 @@
     const imagesHtml=images.map(s=>`<div class="image-attachment"><img src="${s}" alt="Image"/></div>`).join('');
     let bubbleHtml='';
     if(text){const content=role==='user'?text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'):renderMarkdown(text);bubbleHtml=`<div class="bubble">${content}</div>`;}
-    row.innerHTML=`<div class="msg-label">${role==='user'?'you':'gemini ai'}</div><div class="msg-content">${imagesHtml}${bubbleHtml}</div>`;
+    row.innerHTML=`<div class="msg-label">${role==='user'?'you':'thai ai'}</div><div class="msg-content">${imagesHtml}${bubbleHtml}</div>`;
     messagesInner.appendChild(row);
     messagesEl.scrollTop=messagesEl.scrollHeight;
     return row;
@@ -440,7 +442,7 @@
     removeWelcome();
     const row=document.createElement('div');
     row.className='msg-row ai';row.id='typing-row';
-    row.innerHTML=`<div class="msg-label">gemini ai</div><div class="msg-content"><div class="typing-dots"><span></span><span></span><span></span></div></div>`;
+    row.innerHTML=`<div class="msg-label">thai ai</div><div class="msg-content"><div class="typing-dots"><span></span><span></span><span></span></div></div>`;
     messagesInner.appendChild(row);messagesEl.scrollTop=messagesEl.scrollHeight;
   }
   function removeTyping(){document.getElementById('typing-row')?.remove();}
@@ -453,28 +455,19 @@
     msgInput.value='';msgInput.style.height='auto';
     const imageDataUrls=attachedImages.map(i=>i.base64);
     appendRow('user',text,imageDataUrls);
-    const userMessage={role:"user",parts:[]};
-    for(let img of attachedImages)userMessage.parts.push({inlineData:{mimeType:img.type,data:img.base64.split(',')[1]}});
-    if(text)userMessage.parts.push({text});
-    history.push(userMessage);
+    const userMessage={role:"user",content:text,images:attachedImages.map(i=>({data:i.base64.split(',')[1],mimeType:i.type}))};
+    history.push({role:'user',content:text});
     attachedImages=[];renderImagePreviews();
     appendTyping();
     try{
-      const groqMessages=[
-        {role:'system',content:SYSTEM_PROMPT},
-        ...history.map(h=>({
-          role:h.role==='model'?'assistant':'user',
-          content:h.parts.map(p=>p.text||'').join('')
-        }))
-      ];
-      const response=await fetch('/api/groq',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:groqMessages})});
+      const response=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({systemPrompt:SYSTEM_PROMPT,messages:history})});
       const data=await response.json();
       if(!response.ok)throw new Error(data.error?.message||`HTTP ${response.status}`);
-      const reply=data.choices?.[0]?.message?.content||"(no response)";
-      history.push({role:"model",parts:[{text:reply}]});
+      const reply=data.content||"(no response)";
+      history.push({role:'assistant',content:reply});
       removeTyping();appendRow('ai',reply);
     }catch(err){
-      console.error(err);removeTyping();appendError(err.message||"Something went wrong.");
+      console.error(err);removeTyping();appendError(err.message||"Something went wrong. Please try again.");
     }finally{
       isLoading=false;sendBtn.disabled=false;attachBtn.disabled=false;msgInput.focus();
     }
@@ -487,12 +480,12 @@
         <div class="welcome-icon">
           <span class="sparkle-particle p1"></span><span class="sparkle-particle p2"></span>
           <span class="sparkle-particle p3"></span><span class="sparkle-particle p4"></span>
-          <svg class="gemini-logo-svg-large" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 0 C12 6 13 11 24 12 C13 13 12 18 12 24 C12 18 11 13 0 12 C11 11 12 6 12 0 Z" fill="url(#geminiGradWelcome)"/>
+          <svg class="logo-svg-large" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 0 C12 6 13 11 24 12 C13 13 12 18 12 24 C12 18 11 13 0 12 C11 11 12 6 12 0 Z" fill="url(#logoGradWelcome)"/>
           </svg>
         </div>
         <h2>What Can I Help With?</h2>
-        <p>Made by TM — ask anything, paste images too.</p>
+        <p>Ask anything, Thai AI will help you out! Paste images too.</p>
         <div class="suggestion-chips">
           <div class="chip" onclick="useChip(this)">Explain quantum computing</div>
           <div class="chip" onclick="useChip(this)">Write me a poem</div>
